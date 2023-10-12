@@ -2,22 +2,107 @@
     padding: 50px;
 }
 
+.CVMaker_page_container a {
+    text-decoration: none;
+
+}
+
+
+
+.CVMaker_page_container h1 {
+    font-size: 40px;
+}
+
 .CVMaker_list {
+    padding-top: 50px;
+    margin: 0 auto;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: left;
     align-items: center;
+    gap: 60px;
 }
 
 .CVMaker_card {
+    width: 220px;
+    height: 340px;
+
     border-radius: 8px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     overflow: hidden;
 }
 
 .CVMaker_card img {
-    width: 200px;
+    width: 220px;
     object-fit: cover;
-    height: 16  0px;
+    height: 180px;
+}
+
+.CVMaker_card_textbox {
+    padding: 8px 24px;
+}
+
+.CVMaker_card_textbox p {
+    overflow-wrap: break-word;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 10;
+}
+
+.overlay:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.popup {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 120px auto;
+    background: #fff;
+    border-radius: 14px;
+    width: 50%;
+    transition: all 1s ease-in-out;
+    overflow: hidden;
+    box-shadow: rgba(255, 255, 255, 0.35) 0px 5px 15px;
+}
+
+.popup img {
+    width: 100%;
+    height: 100%;
+}
+
+.popup h2 {
+    margin-top: 0;
+    color: #333;
+    font-family: Tahoma, Arial, sans-serif;
+}
+
+.popup .close:hover {
+    color: #06D85F;
+}
+
+.popup .content {
+    max-height: 30%;
+    overflow: auto;
+}
+
+.popup_content {
+    display: flex;
+    flex-direction: column;
+}
+
+.popup_btn {
+    display: flex;
+    justify-content: space-between;
 }

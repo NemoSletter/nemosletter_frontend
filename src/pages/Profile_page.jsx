@@ -26,17 +26,6 @@ export default function Profile_page() {
                     Đăng xuất
                   </p>
                 </div>
-                <div className="avatar_name_button_btn">
-                  <p
-                    style={{
-                      backgroundColor: "#F9F8FF",
-                      color: "#7357FF",
-                      border: "2px solid #E2DCFF",
-                    }}
-                  >
-                    Sửa thông tin
-                  </p>
-                </div>
               </div>
             </div>
             <div className="profile_page_detail_bottom">
