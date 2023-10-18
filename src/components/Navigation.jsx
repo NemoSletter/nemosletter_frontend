@@ -1,6 +1,7 @@
 import React from "react";
 import "../css/Navigation.css";
 import { Link } from "react-router-dom";
+import { LoginButton } from "./LoginButton";
 
 export default function Navigation() {
   return (
@@ -34,11 +35,7 @@ export default function Navigation() {
             <div>Profile</div>{" "}
           </Link>
         </div>
-        <div className="section" id="authen">
-          <div style={{ color: "#FFFFFF", backgroundColor: "#7357FF" }}>
-            Đăng nhập
-          </div>
-        </div>
+        <LoginButton />
       </div>
     </>
   );
