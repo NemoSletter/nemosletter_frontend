@@ -1,31 +1,22 @@
 import React, { useState } from 'react'
 import { GoogleLogin, useGoogleLogin } from '@react-oauth/google';
 import axios from '../apis/axios';
+import { useLogin } from '../hooks/use-login';
+import { useAuthContext } from '../hooks/use-auth-context';
 
 export const LoginButton = () => {
-  const [user, setUser] = useState(null)
-  const [success, setSuccess] = useState(false)
+  const { provider } = useAuthContext()
+  const { login } = useLogin()
 
   const getUser = async(data) => {
-    const gIdToken = data.credential
-    const user = await axios.get('/auth/login', {
-        params: {
-          gIdToken
-        }
-    });
-
-    if(user) {
-      console.log(user)
-      setSuccess(true)
-      setUser(user)
-    }
+    await login(data)
   }
 
   return (
     <>
     {
-      success ?
-      <div>Hello, {user.name}!</div>
+      provider ?
+      <div>Hello, {provider.user.name}!</div>
       :
       // <div style={{ color: "#FFFFFF", backgroundColor: "#7357FF", cursor: 'pointer' }} onClick={()=>googleLogin()}>
       //   Đăng nhập
