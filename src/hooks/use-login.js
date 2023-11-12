@@ -11,7 +11,7 @@ export const useLogin = () => {
       }
     });
 
-    localStorage.setItem('accessToken', JSON.stringify(user.data.accessToken))
+    localStorage.setItem('accessToken', user.data.accessToken)
 
     dispatch({ type: 'LOGIN', payload: user.data })
   }

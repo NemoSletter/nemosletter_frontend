@@ -1,8 +1,40 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../css/Profile_page.css";
 import Footer from "../components/Footer";
+import axios from "../apis/axios";
+import { useLogout } from "../hooks/use-logout";
+import { useNavigate } from "react-router-dom";
 
 export default function Profile_page() {
+  const [ profile, setProfile ] = useState({})
+  const { logout } = useLogout()
+  const navigate = useNavigate()
+
+  const handleGetProfile = async() => {
+    try {
+      const result = await axios.get("user/me", {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem('accessToken')}`
+        }
+      })
+      
+      if (result) {
+        setProfile(result.data)
+      }
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  const handleLogout = () => {
+    logout()
+    navigate("/")
+  }
+
+  useEffect(()=>{
+    handleGetProfile()
+  }, [])
+
   return (
     <>
       <div className="profile_page">
@@ -12,15 +44,14 @@ export default function Profile_page() {
             <div className="profile_page_detail_top">
               <div className="avatar_name_box">
                 <img
-                  src="https://s3-alpha-sig.figma.com/img/c7f6/6f19/a5a5bee218dd868d2667e85a77ecda39?Expires=1698019200&Signature=OeSzqJS1HEJaJKSBjq0CcNnVVPtAEiOfBmcONf1q78CHI8VaZmrSD0CZQIp80zDdaE2JgsPuH4TN7i07LTeGsdGEUNS6lOIqC822NdnCUbIuYXwJ8pmhXbKTd5bjfKuat9b3i5f2mCnKJsdkNmGuBof2WWtgb6KTUnnxcX1M~lKFTF1Rr9ZluXq5XzxBr694gd1QmcRrLcOJw00dJv~kfpzkyqY80CEXHOuVrlr3XIp1bhVlVL1so0fO8KOmVKHii87E80WwCJtQ4B-4c1XS4u2JKy4N8iifisUegcXDOpSFyo2FCXKxkWK0O9OK675aKvwDbVOCgsWj~dQWDOYpEg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
+                  src={profile.picture}
                   alt=""
                 />
                 <p style={{ fontSize: "44px", paddingLeft: "34px" }}>
-                  {" "}
-                  Hoàng Đinh Long
+                  {profile.name}
                 </p>
               </div>
-              <div className="avatar_name_button">
+              <div className="avatar_name_button" onClick={handleLogout}>
                 <div className="avatar_name_button_btn">
                   <p style={{ backgroundColor: "#7357FF", color: "white" }}>
                     Đăng xuất
@@ -34,7 +65,7 @@ export default function Profile_page() {
                   <h1>Email</h1>
                   <div className="inline_info">
                     <i class="fa-regular fa-envelope"></i>
-                    <p>hoanglong@gmail.com</p>{" "}
+                    <p>{profile.email}</p>{" "}
                   </div>
                 </div>
 
@@ -55,10 +86,10 @@ export default function Profile_page() {
                   </div>
                 </div>
                 <div className="profile_page_detail_section">
-                  <h1>Ngày sinh</h1>
+                  <h1>Tài khoản</h1>
                   <div className="inline_info">
-                    <i class="fa-regular fa-calendar-days"></i>
-                    <p>30/01/1998</p>
+                    <i class="fa-regular fa-paper-plane"></i>
+                    <p>{profile.userType}</p>
                   </div>
                 </div>
               </div>

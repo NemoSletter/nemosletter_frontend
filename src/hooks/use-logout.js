@@ -1,7 +1,6 @@
-import axios from "../apis/axios";
 import { useAuthContext } from "./use-auth-context";
 
-export const useLogin = () => {
+export const useLogout = () => {
   const { dispatch } = useAuthContext()
   const logout = () => {
 

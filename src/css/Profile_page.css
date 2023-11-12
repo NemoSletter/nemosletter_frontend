@@ -38,6 +38,7 @@
 .avatar_name_button {
     display: flex;
     flex-direction: column;
+    cursor: pointer;
 }
 
 .avatar_name_button_btn p {
