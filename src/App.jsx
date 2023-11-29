@@ -8,6 +8,7 @@ import Mail from "./pages/Mail_page";
 import Newsletter from "./pages/Newsletter_page";
 import Profile from "./pages/Profile_page";
 import Home from "./pages/Home_page";
+import Admin from "./pages/Admin_dashboard";
 import Footer from "./components/Footer";
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/mail" element={<Mail />}></Route>
         <Route path="/newsletter" element={<Newsletter />}></Route>
         <Route path="/profile" element={<Profile />}></Route>
+        <Route path="/admin" element={<Admin />}></Route>
       </Routes>
     </div>
   );

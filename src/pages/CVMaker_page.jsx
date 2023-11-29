@@ -17,7 +17,7 @@ export default function CVMaker_page() {
               <div className="CVMaker_card" onClick={() => setCV(cv)}>
                 <img src={cv.img} alt="" />
                 <div className="CVMaker_card_textbox">
-                  <h2>{cv.name}</h2>
+                  <h2 style={{ color: "black" }}>{cv.name}</h2>
                   <p>{cv.club}</p>
                 </div>
               </div>

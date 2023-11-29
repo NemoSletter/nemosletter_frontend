@@ -10,13 +10,12 @@ export default function Navigation() {
         <div className="section">
           <Link to={``} style={{ textDecoration: "none" }}>
             <img
-              src="https://scontent.xx.fbcdn.net/v/t1.15752-9/382319422_2948265998637115_607065943778768597_n.png?_nc_cat=100&ccb=1-7&_nc_sid=aee45a&_nc_ohc=m9fJTcTFQz4AX_Bijza&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AdSjYZQEYrvqERmSRe1mafU8au2SJgYf9-b7ZAqn47_f0w&oe=6545A431"
+              src="https://scontent.xx.fbcdn.net/v/t1.15752-9/382319422_2948265998637115_607065943778768597_n.png?_nc_cat=100&ccb=1-7&_nc_sid=510075&_nc_eui2=AeFiSxUYcrzw4v7QXi7EzwBR5VbzvU914qvlVvO9T3Xiq44xPE2eTCoxte1SJrD_jC8X8tJTfvp7uWvxQsqHQN0g&_nc_ohc=zpYpcBn47nQAX9gS7j-&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AdTrhWvvu1-Z1knvPNMEgMUOB8BKvc1gvgKfGOWgbpYY6g&oe=658ECF71"
               alt="Logo"
               id="logo"
             />
           </Link>
         </div>
-
         <div className="section">
           <input type="text" placeholder="Search..." />
         </div>
@@ -33,6 +32,9 @@ export default function Navigation() {
           </Link>
           <Link to={`profile`} style={{ textDecoration: "none" }}>
             <div>Profile</div>{" "}
+          </Link>
+          <Link to={`admin`} style={{ textDecoration: "none" }}>
+            <div>Admin</div>{" "}
           </Link>
         </div>
         <LoginButton />

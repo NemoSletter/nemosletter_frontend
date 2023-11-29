@@ -6,47 +6,46 @@ import { useLogout } from "../hooks/use-logout";
 import { useNavigate } from "react-router-dom";
 
 export default function Profile_page() {
-  const [ profile, setProfile ] = useState({})
-  const { logout } = useLogout()
-  const navigate = useNavigate()
+  const [profile, setProfile] = useState({});
+  const { logout } = useLogout();
+  const navigate = useNavigate();
 
-  const handleGetProfile = async() => {
+  const handleGetProfile = async () => {
     try {
       const result = await axios.get("user/me", {
         headers: {
-          Authorization: `Bearer ${localStorage.getItem('accessToken')}`
-        }
-      })
-      
+          Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        },
+      });
+
       if (result) {
-        setProfile(result.data)
+        setProfile(result.data);
       }
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-  }
+  };
 
   const handleLogout = () => {
-    logout()
-    navigate("/")
-  }
+    logout();
+    navigate("/");
+  };
 
-  useEffect(()=>{
-    handleGetProfile()
-  }, [])
+  useEffect(() => {
+    handleGetProfile();
+  }, []);
 
   return (
     <>
       <div className="profile_page">
         <div className="profile_page_container">
-          <div className="profile_page_sidebar"></div>
+          <div className="profile_page_sidebar">
+            
+          </div>
           <div className="profile_page_detail">
             <div className="profile_page_detail_top">
               <div className="avatar_name_box">
-                <img
-                  src={profile.picture}
-                  alt=""
-                />
+                <img src={profile.picture} alt="" />
                 <p style={{ fontSize: "44px", paddingLeft: "34px" }}>
                   {profile.name}
                 </p>
