@@ -33,9 +33,7 @@ export default function Navigation() {
           <Link to={`profile`} style={{ textDecoration: "none" }}>
             <div>Profile</div>{" "}
           </Link>
-          <Link to={`admin`} style={{ textDecoration: "none" }}>
-            <div>Admin</div>{" "}
-          </Link>
+          
         </div>
         <LoginButton />
       </div>

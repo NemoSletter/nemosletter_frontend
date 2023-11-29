@@ -8,6 +8,24 @@
 .profile_page_sidebar {
     border: 2px solid #A9A9A9;
     border-radius: 10px;
+    overflow: hidden;
+}
+
+.profile_page_sidebar img {
+    width: 100%;
+    margin-top: -34px;
+}
+
+.profile_page_sidebar div {
+    color: gray;
+    padding-top: 90px;
+    padding-left: 20px;
+    padding-right: 16px;
+}
+
+.profile_page_sidebar div h4 {
+    text-align: left;
+    color: gray;
 }
 
 .profile_page_detail {

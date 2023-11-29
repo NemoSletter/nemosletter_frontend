@@ -8,14 +8,14 @@ export default function Admin_dashboard() {
       <div className="Usertable">
         <table>
           <tr>
-            <th>Username</th>
+            <th>Email</th>
             <th>Name</th>
             <th>Gender</th>
             <th>Edit</th>
           </tr>
           {Users.map((user) => (
             <tr>
-              <td>{user.username}</td>
+              <td>{user.email}</td>
               <td>{user.name}</td>
               <td>{user.gender}</td>
               <td>

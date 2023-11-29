@@ -19,9 +19,9 @@ function App() {
         <Route path="/cv" element={<CV />}></Route>
         <Route path="/cv/cv_maker" element={<CVMaker />}></Route>
         <Route path="/mail" element={<Mail />}></Route>
+        <Route path="/admin" element={<Admin />}></Route>
         <Route path="/newsletter" element={<Newsletter />}></Route>
         <Route path="/profile" element={<Profile />}></Route>
-        <Route path="/admin" element={<Admin />}></Route>
       </Routes>
     </div>
   );
