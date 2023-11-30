@@ -3,6 +3,7 @@ import "../css/Mail_page.css";
 import { Link } from "react-router-dom";
 import axios from "../apis/axios";
 import Mail_content from "./Mail_content";
+import Navigation from "../components/Navigation";
 
 export default function Mail_page() {
   const [ mails, setMails ] = useState([])
@@ -30,6 +31,7 @@ export default function Mail_page() {
 
   return (
     <>
+    <Navigation />
       <div
         className="landing_email_container"
         style={{ backgroundColor: "#F6F7F9", paddingLeft: "25px" }}

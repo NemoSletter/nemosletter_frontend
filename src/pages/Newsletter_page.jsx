@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 export default function Newsletter_page() {
   return (
     <>
+    <Navigation />
       <div className="landing_newsletter">
         <div className="" id="taonewsletter">
           <img

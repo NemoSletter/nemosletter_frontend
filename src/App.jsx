@@ -13,7 +13,6 @@ import Footer from "./components/Footer";
 function App() {
   return (
     <div>
-      <Navigation />
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/cv" element={<CV />}></Route>

@@ -2,10 +2,12 @@ import React from "react";
 import "../css/CV_page.css";
 import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
+import Navigation from "../components/Navigation";
 
 export default function CV_page() {
   return (
     <>
+    <Navigation />
       <div className="landing_cv">
         <div className="CV_section_top">
           <div className="CV_section_top_title" id="dangkyngay">

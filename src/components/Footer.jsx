@@ -12,7 +12,7 @@ export default function Footer() {
           <p>THÔNG TIN HỖ TRỢ</p>
         </div>
         <div className="contact">
-          <Link to={`admin`} style={{ textDecoration: "none" }}>
+          <Link to={`/admin`} style={{ textDecoration: "none", cursor:'default' }} target="_blank">
             <img
               src="https://scontent.xx.fbcdn.net/v/t1.15752-9/382319422_2948265998637115_607065943778768597_n.png?_nc_cat=100&ccb=1-7&_nc_sid=510075&_nc_eui2=AeFiSxUYcrzw4v7QXi7EzwBR5VbzvU914qvlVvO9T3Xiq44xPE2eTCoxte1SJrD_jC8X8tJTfvp7uWvxQsqHQN0g&_nc_ohc=zpYpcBn47nQAX9gS7j-&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AdTrhWvvu1-Z1knvPNMEgMUOB8BKvc1gvgKfGOWgbpYY6g&oe=658ECF71"
               alt="Logo"

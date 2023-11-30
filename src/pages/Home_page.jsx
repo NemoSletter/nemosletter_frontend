@@ -2,9 +2,11 @@ import React from "react";
 import "../css/Home_page.css";
 import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
+import Navigation from "../components/Navigation";
 export default function Home_page() {
   return (
     <>
+    <Navigation />
       <div className="landing">
         <div className="landing_section" id="dangkyngay">
           <p

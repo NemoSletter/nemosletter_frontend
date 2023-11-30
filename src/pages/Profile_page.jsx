@@ -4,6 +4,7 @@ import Footer from "../components/Footer";
 import axios from "../apis/axios";
 import { useLogout } from "../hooks/use-logout";
 import { useNavigate } from "react-router-dom";
+import Navigation from "../components/Navigation";
 
 export default function Profile_page() {
   const [profile, setProfile] = useState({});
@@ -37,6 +38,7 @@ export default function Profile_page() {
 
   return (
     <>
+    <Navigation />
       <div className="profile_page">
         <div className="profile_page_container">
           <div className="profile_page_sidebar">
@@ -68,7 +70,7 @@ export default function Profile_page() {
                 <div className="profile_page_detail_section">
                   <h1>Email</h1>
                   <div className="inline_info">
-                    <i class="fa-regular fa-envelope"></i>
+                    <i className="fa-regular fa-envelope"></i>
                     <p>{profile.email}</p>{" "}
                   </div>
                 </div>
@@ -76,7 +78,7 @@ export default function Profile_page() {
                 <div className="profile_page_detail_section">
                   <h1>Giới tính</h1>
                   <div className="inline_info">
-                    <i class="fa-regular fa-paper-plane"></i>
+                    <i className="fa-regular fa-paper-plane"></i>
                     <p>Nam</p>{" "}
                   </div>
                 </div>
@@ -85,14 +87,14 @@ export default function Profile_page() {
                 <div className="profile_page_detail_section">
                   <h1>Số điện thoại</h1>
                   <div className="inline_info">
-                    <i class="fa-regular fa-paper-plane"></i>
+                    <i className="fa-regular fa-paper-plane"></i>
                     <p>088209208202</p>{" "}
                   </div>
                 </div>
                 <div className="profile_page_detail_section">
                   <h1>Tài khoản</h1>
                   <div className="inline_info">
-                    <i class="fa-regular fa-paper-plane"></i>
+                    <i className="fa-regular fa-paper-plane"></i>
                     <p>{profile.userType}</p>
                   </div>
                 </div>
